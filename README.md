@@ -2,9 +2,9 @@
   - Installation within R: install_github("baolinwu/MTAR")  (assuming the "devtools" R package installed)
 
 ## Fast and accurate genome-wide association test of multiple quantitative traits
-  - Reference:  B. Wu and J.S. Pankow (2017). Fast and accurate
+  - Reference:  Wu,B. and Pankow,J.S. (2017) Fast and accurate
     genome-wide association test of multiple continuous traits. *tech report*
-  - Jointly test the association of a SNP with $m$ continuous traits.
+  - Jointly test the association of a SNP with *m* continuous traits.
   - Sample codes
 ```r
   library(VGAM)
