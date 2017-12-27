@@ -1,5 +1,5 @@
 # MTAR
-  - An R package for multi-trait association tests
+  - An R package implementing statistical methods for multi-trait association tests
   - Installation within R: install_github("baolinwu/MTAR")  (assuming the "devtools" R package installed)
 
 ## 1. Fast and accurate genome-wide association test of multiple quantitative traits
