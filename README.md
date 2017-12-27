@@ -5,7 +5,7 @@
 ## 1. Fast and accurate genome-wide association test of multiple quantitative traits
   - Reference:  Wu,B. and Pankow,J.S. (2017) Fast and accurate
     genome-wide association test of multiple continuous traits. *tech report*
-  - Jointly test the association of a SNP with *m* continuous traits.
+  - Jointly test the association of a SNP with several continuous traits.
   - Sample codes
 ```r
   library(VGAM)
