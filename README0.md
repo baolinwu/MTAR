@@ -7,9 +7,7 @@
     - Wu,B. and Pankow,J.S. (2015) Statistical methods for association tests of multiple continuous traits in genome-wide association studies. *Annals of human genetics*, 79(4), 282-293.
  - We are testing the joint effects of multiple continuous traits with a SNP.
  - Three tests are implemented: an omnibus m-DF chi-square test; two 1-DF chi-square tests assuming common effect or common scaled effect.
-
-
-# R codes
+ - Sample R codes
 ```r
 library(MTAR)
 n=1e3; K=4; m=3; maf=0.2
