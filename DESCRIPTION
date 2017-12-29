@@ -1,11 +1,8 @@
 Package: MTAR
 Title: Various Multi-Trait Association tests in R
 Version: 0.1.0
-Imports:
-    VGAM,
-    mvtnorm
-Description: This package implements various methods for genome-wide association
-    test of mutiple traits.
+Imports:  VGAM, mvtnorm
+Description: an R package implementing various methods for genome-wide association test of multiple traits.
 Depends:
     R (>= 3.0.0)
 License: GPL (>= 2)
