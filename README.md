@@ -1,5 +1,4 @@
 # MTAR
-<<<<<<< HEAD
   - an R package implementing various methods for genome-wide association test of multiple traits
   - installation within R: install_github("baolinwu/MTAR")  (assuming the "devtools" R package installed)
 
@@ -10,15 +9,6 @@
   - Jointly test the association of a SNP with multiple continuous traits.
      - accurate calculaiton of P-values.
      - very efficient and extremely scalable to genome-wide association test.
-=======
-  - An R package implementing statistical methods for multi-trait association tests
-  - Installation within R: install_github("baolinwu/MTAR")  (assuming the "devtools" R package installed)
-
-## 1. Fast and accurate genome-wide association test of multiple quantitative traits
-  - Reference:  Wu,B. and Pankow,J.S. (2017) Fast and accurate
-    genome-wide association test of multiple continuous traits. *tech report*
-  - Jointly test the association of a SNP with several continuous traits.
->>>>>>> 23a57fbf61bba6f6359fdcebfd0014b8cbeccbb6
   - Sample codes
 ```r
   library(VGAM)
