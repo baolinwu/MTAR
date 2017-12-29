@@ -7,7 +7,7 @@
   - Reference:  
      - Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple continuous traits. *tech report*
   - Jointly test the association of a SNP with multiple continuous traits.
-     - accurate calculaiton of P-values.
+     - accurate calculation of P-values.
      - very efficient and extremely scalable to genome-wide association test.
   - Sample codes
 ```r
