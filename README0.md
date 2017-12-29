@@ -25,4 +25,6 @@ Y2 = Ys
 Y2[,1] = Y2[,1] + 0.15*G
 Y2[,2] = Y2[,2] + 0.15*G
 MTA.ACL(Y2,Xs,G)
+Y3 = Ys + 0.15*G
+MTA.ACL(Y3,Xs,G)
 ```
