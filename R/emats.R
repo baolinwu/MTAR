@@ -3,10 +3,11 @@
 #' We show that using the summary statistics, we can compute the PC to summarize the multiple traits,
 #' and then construct the 1-DF test statistic. The omnibus K-DF chi-square test is generally robust and powerful.
 #' We then define the adaptive test as the minium p-values of weighted sums of 1-DF (\eqn{\rho}) and K-DF (\eqn{1-\rho}) tests.
-#' An efficient algorithm is developed to compute the analytical p-value of adptive test.
-#' We use the LD score regression (Bulik-Sullivan et al.) to accurately estimate the trait correlation.
+#' Efficient algorithms are developed to compute the analytical p-values for all tests.
+#' We use the LD score regression (see GCvr() function) to accurately estimate the marginal trait correlation using GWAS summary data.
+#'
 #' @param  Z summary Z-statistics across multiple traits
-#' @param  Sig the estimated trait correlation matrix
+#' @param  Sig the estimated marginal trait correlation matrix
 #' @param  rho sequence of weights assigned to the 1-DF test
 #' @return
 #' \describe{
