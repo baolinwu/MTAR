@@ -19,7 +19,7 @@ MTA.minp(obj, G)
 }
 }
 \description{
-We efficiently computate minimum test p-values (minP) across multiple quantitative traits;
+We efficiently compute minimum test p-values (minP) across multiple quantitative traits;
 and report two test p-values: 1) Bonferroni corrected minimum p-values (Pbonf) across traits.
 2) Analytical significance p-value (Pmin) of minP using asymptotic multivariate normal integration.
 See refs in the PGmvn() function.
