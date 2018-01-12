@@ -13,7 +13,7 @@ MQTAd(obj, G)
 }
 \value{
 \describe{
-  \item{p.value}{ three association p-values: an ombinus m-DF chi-square test; two 1-DF chi-square tests assuming common effect or common scaled effect (see ref) }
+  \item{p.value}{ three association p-values: an ombinus m-DF Wald test; two 1-DF Wald tests assuming common effect or common scaled effect (see ref) }
   \item{coef}{ estimated variant regression coefficients for all traits}
 }
 }
