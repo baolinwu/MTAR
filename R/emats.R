@@ -20,7 +20,7 @@
 #' Bulik-Sullivan B et al. (2015) An atlas of genetic correlations across human diseases and traits. \emph{Nature Genetics}, 47(11):1236--41.
 #' 
 #' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
-emats <- function(Z,Sig, rho=(-10):5/5){
+emats <- function(Z,Sig, rho=0:5/5){
   K = length(rho); M = dim(Sig)[1]
   es = eigen(Sig,sym=TRUE)
   chi1 = sum(Z*solve(Sig,Z))

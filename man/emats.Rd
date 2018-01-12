@@ -4,7 +4,7 @@
 \alias{emats}
 \title{Principal component based adaptive multi-trait association test using GWAS summary data}
 \usage{
-emats(Z, Sig, rho = (-10):5/5)
+emats(Z, Sig, rho = 0:5/5)
 }
 \arguments{
 \item{Z}{summary Z-statistics across multiple traits}
