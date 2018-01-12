@@ -21,5 +21,5 @@ MQTAd(obj, G)
 Fast computation of genome-wide association test of multiple quantitative traits.
 }
 \references{
-Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. tech report.
+Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. CMMM, under revision.
 }
