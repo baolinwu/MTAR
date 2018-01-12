@@ -32,7 +32,10 @@ Ghuber = function(u, k=30, deriv=0){
 SHvr <- function(Z,r2, N, W=NULL){
   if(is.null(W)) W = rep(1,length(Z))
   tau = (mean(Z^2)-1)/mean(N*r2)
-  rcf = as.vector( rlm(I(Z^2) ~ I(N*r2), weight=W/(1+tau*N*r2)^2, psi=Ghuber)$coef )
+  Wv = 1/(1+tau*N*r2)^2
+  id = which(Z^2>30)
+  if(length(id)>0) Wv[id] = sqrt(Wv[id])
+  rcf = as.vector( rlm(I(Z^2) ~ I(N*r2), weight=W*Wv, psi=Ghuber, k=30)$coef )
   return(list(h2=rcf[2], v0=rcf[1]) )
 }
 
@@ -81,12 +84,14 @@ GCvr <- function(Zs,r2, N1,N2,Nc=0, W=NULL){
     gv = as.vector(rlm(Y ~ X-1, psi=Ghuber)$coef)
   }
   ## 2nd round
-  Wt = W/( (h1*N1r2+1)*(h2*N2r2+1) + (X*gv + r0)^2 )
+  Wv = 1/( (h1*N1r2+1)*(h2*N2r2+1) + (X*gv + r0)^2 )
+  id = which(abs(Zs[,1]*Zs[,2])>30)
+  if(length(id)>0) Wv[id] = sqrt(Wv[id])
   if(any(Nc>0)){
-    rcf = as.vector( rlm(Y ~ X, weight=Wt, psi=Ghuber)$coef )
+    rcf = as.vector( rlm(Y ~ X, weight=W*Wv, psi=Ghuber, k=30)$coef )
     r0 = rcf[1]; gv = rcf[-1]
   } else{
-    gv = as.vector(rlm(Y ~ X-1, weight=Wt, psi=Ghuber)$coef)
+    gv = as.vector(rlm(Y ~ X-1, weight=W*Wv, psi=Ghuber, k=30)$coef)
   }
   gc = gv/sqrt(h1*h2)
   return(list(gv=gv,gc=gc, r0=r0, h2s = c(h1,h2)) )
