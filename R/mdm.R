@@ -50,7 +50,7 @@ MDM.null = function(YX,pux=NULL){
 #' 
 #' @export
 #' @references
-#' Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. tech report.
+#' Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. CMMM, under revision.
 #' @export
 MQTAd = function(obj,G){
   n = obj$n; m = obj$m; pux = obj$pux

@@ -39,7 +39,7 @@ MLM.null <- function(Ys,Xs=NULL){
 #' 
 #' @export
 #' @references
-#' Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. tech report.
+#' Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. CMMM, under revision.
 MQTAc <- function(obj,G){
   n = obj$n; m=obj$m; p=obj$p
   pval = rep(NA,3)
