@@ -15,7 +15,7 @@
 #'
 #' Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple quantitative traits. tech report.
 ## Marginal GEE from LinDY
-MTA.lin <- function(obj,G){
+MTA.gee <- function(obj,G){
   n = obj$n; m=obj$m; p=obj$p
   res = obj$res
   pval = rep(NA,3)

@@ -7,7 +7,7 @@
 Lmatz(Z, Sig, alpha = 5e-08)
 }
 \arguments{
-\item{Z}{summary Z-statistics across multiple traits}
+\item{Z}{matrix of summary Z-statistics (SNPs by traits)}
 
 \item{Sig}{the estimated marginal trait correlation matrix}
 

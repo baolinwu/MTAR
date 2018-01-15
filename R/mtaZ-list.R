@@ -25,7 +25,7 @@ Tval = function(minp, Sig, rho=0:5/5){
 #'
 #' We compute the significant SNPs for three tests: omnibus chi-square test; 1-DF PC test; adaptive test.
 #'
-#' @param  Z summary Z-statistics across multiple traits
+#' @param  Z matrix of summary Z-statistics (SNPs by traits)
 #' @param  Sig the estimated marginal trait correlation matrix
 #' @param  rho sequence of weights assigned to the 1-DF test
 #' @param  alpha desired genome-wide significance level (default to 5E-8)
@@ -66,7 +66,7 @@ Lmats <- function(Z, Sig, rho=0:5/5, alpha=5e-8){
 #'
 #' We compute the significant SNPs for three tests: minimum marginal test p-value (minP); SZ test; SZ2 test.
 #'
-#' @param  Z summary Z-statistics across multiple traits
+#' @param  Z matrix of summary Z-statistics (SNPs by traits)
 #' @param  Sig the estimated marginal trait correlation matrix
 #' @param  alpha desired genome-wide significance level (default to 5E-8)
 #' @return
