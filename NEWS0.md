@@ -5,7 +5,7 @@
 -----
 ## Fast and accurate genome-wide association test of multiple quantitative traits
   - Reference
-     - Wu,B. and Pankow,J.S. (2017) Fast and accurate genome-wide association test of multiple continuous traits. *CMMM*, under revision.
+     - Wu,B. and Pankow,J.S. (2018) Fast and accurate genome-wide association test of multiple continuous traits. *CMMM*, in press.
   - Jointly test the association of a SNP with multiple continuous traits.
      - accurate calculation of P-values.
      - very efficient and extremely scalable to genome-wide association test.
