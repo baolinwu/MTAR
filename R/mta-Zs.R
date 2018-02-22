@@ -7,7 +7,7 @@
 #' @return vector of p-values for three tests:  minP,SZ,SZ2
 #' @export
 #' @references
-#' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
 matz <- function(Z,Sig){
   M = dim(Sig)[1]
   lam = eigen(Sig,sym=TRUE,only.val=TRUE)$val

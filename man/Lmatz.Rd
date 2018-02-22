@@ -18,11 +18,15 @@ Lmatz(Z, Sig, alpha = 5e-08)
   \item{idM}{ significant SNP list for minP }
   \item{idS}{ significant SNP list for SZ }
   \item{idS2}{ significant SNP list for SZ2 }
+  \item{idQ}{ significant SNP list for OT }
+  \item{idQ2}{ significant SNP list for min(SZ2,OT) }
+  \item{idm}{ SNPs significant at any marginal trait }
 }
 }
 \description{
-We compute the significant SNPs for three tests: minimum marginal test p-value (minP); SZ test; SZ2 test.
+We compute the significant SNPs for (1) minimum marginal test p-value (minP); SZ test; SZ2 test;
+and (2) omnibus chi-square test (OT); minimum of OT and SZ2; and significant at any marginal test.
 }
 \references{
-Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
 }

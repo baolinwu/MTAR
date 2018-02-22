@@ -2,7 +2,7 @@
 
 export(GCvr)
 export(KATpval)
-export(Lmats)
+export(Lemats)
 export(Lmatz)
 export(MDM.null)
 export(MLM.null)

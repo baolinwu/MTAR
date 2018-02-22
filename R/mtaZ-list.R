@@ -32,13 +32,13 @@ Tval = function(minp, Sig, rho=0:5/5){
 #' @return
 #' \describe{
 #'   \item{idQ}{ significant SNP list for omnibus chi-square test }
-#'   \item{idB}{ significant SNP list for 1-DF PC test }
+#'   \item{idE}{ significant SNP list for 1-DF PC test }
 #'   \item{idA}{ significant SNP list for adaptive test }
 #' }
 #' @export
 #' @references
-#' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
-Lmats <- function(Z, Sig, rho=0:5/5, alpha=5e-8){
+#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Lemats <- function(Z, Sig, rho=0:5/5, alpha=5e-8){
   if(class(Z)!='matrix') Z = as.matrix(Z)
   M = dim(Sig)[1]; K = length(rho)
   t1 = qchisq(alpha,M, lower=FALSE)
@@ -58,13 +58,14 @@ Lmats <- function(Z, Sig, rho=0:5/5, alpha=5e-8){
   ss3 = 1*( ((1-rho[1])*Q+rho[1]*B)>Qs[1] )
   for(i in 2:K)  ss3 = ss3 + 1*( ((1-rho[i])*Q+rho[i]*B)>Qs[i] )
 
-  return(list(idQ=ss1,idB=ss2,idA=which(ss3>0)) )
+  return(list(idQ=ss1,idE=ss2,idA=which(ss3>0)) )
 }
 
 
 #' Compute the list of significant SNPs using the GWAS summary data based multi-trait association tests
 #'
-#' We compute the significant SNPs for three tests: minimum marginal test p-value (minP); SZ test; SZ2 test.
+#' We compute the significant SNPs for (1) minimum marginal test p-value (minP); SZ test; SZ2 test;
+#' and (2) omnibus chi-square test (OT); minimum of OT and SZ2; and significant at any marginal test.
 #'
 #' @param  Z matrix of summary Z-statistics (SNPs by traits)
 #' @param  Sig the estimated marginal trait correlation matrix
@@ -74,16 +75,20 @@ Lmats <- function(Z, Sig, rho=0:5/5, alpha=5e-8){
 #'   \item{idM}{ significant SNP list for minP }
 #'   \item{idS}{ significant SNP list for SZ }
 #'   \item{idS2}{ significant SNP list for SZ2 }
+#'   \item{idQ}{ significant SNP list for OT }
+#'   \item{idQ2}{ significant SNP list for min(SZ2,OT) }
+#'   \item{idm}{ SNPs significant at any marginal trait }
 #' }
 #' @export
 #' @references
-#' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
 Lmatz <- function(Z, Sig, alpha=5e-8){
   if(class(Z)!='matrix') Z = as.matrix(Z)
   M = dim(Sig)[1]
   es = eigen(Sig, sym=TRUE)
   ##
-  f1 = function(q0) ( 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig, algorithm=Miwa(steps=256)) - alpha )*floor(1/alpha)
+  ## f1 = function(q0) ( 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig, algorithm=Miwa(steps=256)) - alpha )*floor(1/alpha)
+  f1 = function(q0) ( 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig) - alpha )*floor(1/alpha)
   q1 = qnorm(alpha/2,lower=FALSE); q2 = q1*1.1
   while( f1(q1)*f1(q2)>0 ) q2 = q2*1.1
   q0 = uniroot(f1, c(q1,q2), tol=alpha*1e-4)$root
@@ -95,9 +100,19 @@ Lmatz <- function(Z, Sig, alpha=5e-8){
   ss1 = which(SZ1>t1)
   SZ2 = rowSums(Z^2)
   ss2 = which(SZ2>t2)
-  Zm = abs(Z[,1])
-  for(i in 2:M)  Zm = pmax(Zm, abs(Z[,i]))
-  ss3 = which(Zm>q0)
-
-  return(list(idM=ss3,idS=ss1,idS2=ss2) )
+  ## Zm = abs(Z[,1]); for(i in 2:M)  Zm = pmax(Zm, abs(Z[,i])); ss3 = which(Zm>q0)
+  ss3 = which(rowSums(abs(Z)>q0)>0)
+  ss0 = which(rowSums(abs(Z)>q1)>0)
+  ##
+  tm = qchisq(alpha,M, lower=FALSE)
+  Q = rowSums(Z%*%solve(Sig)*Z)
+  ss4 = which(Q>tm)
+  ## 
+  tm2 = qchisq(alpha/2,M, lower=FALSE)
+  t22 = KATqval(alpha/2,es$val,alpha*1e-4)
+  ss5 = which( (Q>tm2)|(SZ2>t22) )
+  ##
+  return(list(idM=ss3,idS=ss1,idS2=ss2, idQ=ss4,idQ2=ss5, idm=ss0) )
 }
+
+

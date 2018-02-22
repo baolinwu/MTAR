@@ -1,4 +1,8 @@
 KATqval = function(pval, lambda, racc=1e-2,lim=1e7){
+  ## safe check
+  if( all(abs(lambda-lambda[1])/max(abs(lambda))<1e-10) ){
+    return( qchisq(pval,length(lambda),lower=FALSE)*mean(lambda) )
+  }
   piv = floor(1/pval)
   f0 = function(x) ( KATpval(x,lambda,racc,lim) - pval )*piv
   q0 = Liu.qval(pval, lambda)

@@ -18,5 +18,5 @@ vector of p-values for three tests:  minP,SZ,SZ2
 We compute analytical p-values for three multi-trait tests: minimum marginal test p-value (minP), sum of Z-stats (SZ), and sum of squared Z-stats (SZ2).
 }
 \references{
-Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
 }
