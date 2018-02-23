@@ -30,5 +30,5 @@ We use the LD score regression (see GCvr() function) to accurately estimate the 
 \references{
 Bulik-Sullivan B et al. (2015) An atlas of genetic correlations across human diseases and traits. \emph{Nature Genetics}, 47(11):1236--41.
 
-Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. bioRxiv 269597; doi: 10.1101/269597
 }
