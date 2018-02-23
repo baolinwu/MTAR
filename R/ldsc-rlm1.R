@@ -28,7 +28,7 @@ Ghuber = function(u, k=30, deriv=0){
 #' Bulik-Sullivan,B.K. et al. (2015) LD Score regression distinguishes confounding from polygenicity in genome-wide association
 #' studies. Nature Genetics, 47, 291-295.
 #'
-#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics.
+#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. bioRxiv 269597; doi: 10.1101/269597
 SHvr <- function(Z,r2, N, W=NULL){
   if(is.null(W)) W = rep(1,length(Z))
   tau = (mean(Z^2)-1)/mean(N*r2)
@@ -67,7 +67,7 @@ SHvr <- function(Z,r2, N, W=NULL){
 #' @references
 #' Bulik-Sullivan,B.K. et al. (2015) An atlas of genetic correlations across human diseases and traits. Nat. Genet. 47, 1236–1241.
 #'
-#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. bioRxiv 269597; doi: 10.1101/269597
 GCvr <- function(Zs,r2, N1,N2,Nc=0, W=NULL){
   if(is.null(W)) W = rep(1,length(r2))
   h1 = SHvr(Zs[,1],r2, N1, W)$h2

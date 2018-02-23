@@ -31,5 +31,5 @@ LDSC is a variance regression (VR) approach: regressing chi-square statistics on
 Bulik-Sullivan,B.K. et al. (2015) LD Score regression distinguishes confounding from polygenicity in genome-wide association
 studies. Nature Genetics, 47, 291-295.
 
-Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics.
+Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. bioRxiv 269597; doi: 10.1101/269597
 }
