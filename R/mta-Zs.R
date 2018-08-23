@@ -8,7 +8,7 @@
 #' @return vector of p-values for three tests:  minP,ST,SQT
 #' @export
 #' @references
-#' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+#' Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, under revision (* contribute equallly).
 matz <- function(Z,Sig){
   M = dim(Sig)[1]
   lam = eigen(Sig,sym=TRUE,only.val=TRUE)$val

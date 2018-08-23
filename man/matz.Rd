@@ -19,5 +19,5 @@ We compute analytical p-values for three multi-trait tests: minimum marginal tes
 and sum of squared Z-stats (SQT).
 }
 \references{
-Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, under revision (* contribute equallly).
 }
