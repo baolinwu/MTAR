@@ -1,10 +1,11 @@
 #' Various multi-trait association tests using GWAS summary data
 #'
-#' We compute analytical p-values for three multi-trait tests: minimum marginal test p-value (minP), sum of Z-stats (SZ), and sum of squared Z-stats (SZ2). 
+#' We compute analytical p-values for three multi-trait tests: minimum marginal test p-value (minP), sum of Z-stats (ST),
+#' and sum of squared Z-stats (SQT). 
 #'
 #' @param  Z summary Z-statistics across multiple traits
 #' @param  Sig the estimated marginal trait correlation matrix
-#' @return vector of p-values for three tests:  minP,SZ,SZ2
+#' @return vector of p-values for three tests:  minP,ST,SQT
 #' @export
 #' @references
 #' Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
@@ -20,5 +21,7 @@ matz <- function(Z,Sig){
   ## minp
   q0 = max(abs(Z))
   pvalm = 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig, algorithm=Miwa(steps=256))
-  return( c(pvalm,pvals,pval2) )
+  p.value = c(pvalm,pvals,pval2)
+  names(p.value) = c('minP', 'ST', 'SQT')
+  return(p.value)
 }

@@ -4,8 +4,8 @@
 \alias{PGmvn}
 \title{Compute the tail probability of the m-dim multivariate normal distribution}
 \usage{
-PGmvn(lower = -Inf, upper = Inf, mean = NULL, sigma, Nsample = 10000,
-  Ncov = 1)
+PGmvn(lower = -Inf, upper = Inf, mean = NULL, sigma,
+  Nsample = 10000, Ncov = 1)
 }
 \arguments{
 \item{lower}{the vector of lower limits of length m}
