@@ -19,7 +19,7 @@
 #' }
 #' @export
 #' @references
-#' Bulik-Sullivan BK  et al. (2015) LD Score regression distinguishes confounding from polygenicity in genome-wide association studies.
+#' Bulik-Sullivan B  et al. (2015) LD Score regression distinguishes confounding from polygenicity in genome-wide association studies.
 #'  \emph{Nature Genetics}, 47(3):291--295.
 #' 
 #' Bulik-Sullivan B et al. (2015) An atlas of genetic correlations across human diseases and traits. \emph{Nature Genetics}, 47(11):1236--1241.
@@ -29,8 +29,8 @@
 #' Sig = diag(3)
 #' Sig[c(2:3,6, 4,7,8)] = c(0.2646,-0.2317, 0.7451)
 #' Z = c(1,2,4)
-#' pmats(Z,Sig)
-pmats <- function(Z, Sig, rho=0:10/10){
+#' cmats(Z,Sig)
+cmats <- function(Z, Sig, rho=0:10/10){
   iSig = solve(Sig)
   K = length(rho); M = dim(iSig)[1]
   tmp = iSig%*%Z;  chi1 = sum(Z*tmp);  chi2 = sum(tmp)^2/sum(iSig)
