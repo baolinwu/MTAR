@@ -1,16 +1,16 @@
-#' Compute the tail probability of weighted sum of 1-DF chi-square rvs
-#'
-#' Use Davies' method and apply a relative error bound (avoid redundant computations): efficient and accurate.
-#' @param Q.all  test statistics
-#' @param lambda  mixing coefficients
-#' @param acc  relative error bound
-#' @param lim  maximum number of integration terms
-#' @return tail probability
-#' @export
-#' @references
-#' Wu,B., Guan,W., Pankow,J.S. (2016) On efficient and accurate calculation of significance p-values for sequence kernel association test of variant set. \emph{Annals of human genetics}, 80(2), 123-135.
-#'
-#' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+# ' Compute the tail probability of weighted sum of 1-DF chi-square rvs
+# '
+# ' Use Davies' method and apply a relative error bound (avoid redundant computations): efficient and accurate.
+# ' @param Q.all  test statistics
+# ' @param lambda  mixing coefficients
+# ' @param acc  relative error bound
+# ' @param lim  maximum number of integration terms
+# ' @return tail probability
+# ' @export
+# ' @references
+# ' Wu,B., Guan,W., Pankow,J.S. (2016) On efficient and accurate calculation of significance p-values for sequence kernel association test of variant set. \emph{Annals of human genetics}, 80(2), 123-135.
+# '
+# ' Guo,B. and Wu,B. (2017) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
 KATpval <- function(Q.all, lambda, acc=1e-2,lim=1e7){
   pval = Liu.pval(Q.all,lambda)
   i1 = which(is.finite(Q.all))
