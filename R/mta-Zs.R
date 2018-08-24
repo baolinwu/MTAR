@@ -20,7 +20,7 @@ matz <- function(Z,Sig){
   pval2 = KATpval(SZ2, lam)
   ## minp
   q0 = max(abs(Z))
-  pvalm = 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig, algorithm=Miwa(steps=256))
+  pvalm = 1-pmvnorm(rep(-q0,M),rep(q0,M), sigma=Sig, algorithm=Miwa)
   p.value = c(pvalm,pvals,pval2)
   names(p.value) = c('minP', 'ST', 'SQT')
   return(p.value)
