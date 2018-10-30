@@ -12,12 +12,12 @@ matz(Z, Sig)
 \item{Sig}{the estimated marginal trait correlation matrix}
 }
 \value{
-vector of p-values for three tests:  minP,ST,SQT
+vector of p-values for three tests:  minP,SZ,SZ2
 }
 \description{
-We compute analytical p-values for three multi-trait tests: minimum marginal test p-value (minP), sum of Z-stats (ST),
-and sum of squared Z-stats (SQT).
+We compute analytical p-values for three multi-trait tests: minimum marginal test p-value (minP), sum of Z-stats (SZ),
+and sum of squared Z-stats (SZ2).
 }
 \references{
-Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, under revision (* contribute equallly).
+Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, to appear (* contribute equallly).
 }

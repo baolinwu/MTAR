@@ -17,14 +17,14 @@ Lemats(Z, Sig, rho = 0:5/5, alpha = 5e-08)
 }
 \value{
 \describe{
-  \item{idQ}{ significant SNP list for omnibus chi-square test }
-  \item{idE}{ significant SNP list for 1-DF PC test }
-  \item{idA}{ significant SNP list for adaptive test }
+  \item{idQ}{ significant SNP list for OT }
+  \item{idE}{ significant SNP list for ET }
+  \item{idA}{ significant SNP list for AT }
 }
 }
 \description{
-We compute the significant SNPs for three tests: omnibus chi-square test; 1-DF PC test; adaptive test.
+We compute the significant SNPs for three tests: omnibus chi-square test (OT); 1-DF PC test (ET); adaptive test (AT).
 }
 \references{
-Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. tech rep.
+Guo,B. and Wu,B. (2018) Integrate multiple traits to detect novel disease-gene association using GWAS summary data with an adaptive test approach. \emph{Bioinformatics}, under revision.
 }

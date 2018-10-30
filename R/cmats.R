@@ -24,7 +24,7 @@
 #' 
 #' Bulik-Sullivan B et al. (2015) An atlas of genetic correlations across human diseases and traits. \emph{Nature Genetics}, 47(11):1236--1241.
 #' 
-#' Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, under revision (* contribute equallly).
+#' Massoti M*, Guo B* and Wu B. (2018) Pleiotropy informed adaptive association test of multiple traits using GWAS summary data. \emph{Biometrics}, to appear (* contribute equallly).
 #' @examples
 #' Sig = diag(3)
 #' Sig[c(2:3,6, 4,7,8)] = c(0.2646,-0.2317, 0.7451)

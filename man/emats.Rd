@@ -15,15 +15,15 @@ emats(Z, Sig, rho = 0:5/5)
 }
 \value{
 \describe{
-  \item{p.value}{ p-value for the adaptive test }
+  \item{p.value}{ p-value for the AT }
   \item{pvals}{ the list of all p-values }
   \item{rho.est}{ estimated optimal \eqn{\rho} value }
 }
 }
 \description{
 We show that using the summary statistics, we can compute the PC to summarize the multiple traits,
-and then construct the 1-DF test statistic. The omnibus K-DF chi-square test is generally robust and powerful.
-We then define the adaptive test as the minium p-values of weighted sums of 1-DF (\eqn{\rho}) and K-DF (\eqn{1-\rho}) tests.
+and then construct the 1-DF test statistic (ET). The omnibus K-DF chi-square test (OT) is generally robust and powerful.
+We then define the adaptive test (AT) as the minium p-values of weighted sums of ET (\eqn{\rho}) and OT (\eqn{1-\rho}) tests.
 Efficient algorithms are developed to compute the analytical p-values for all tests.
 We use the LD score regression (see GCvr() function) to accurately estimate the marginal trait correlation using GWAS summary data.
 }
@@ -31,4 +31,6 @@ We use the LD score regression (see GCvr() function) to accurately estimate the 
 Bulik-Sullivan B et al. (2015) An atlas of genetic correlations across human diseases and traits. \emph{Nature Genetics}, 47(11):1236--41.
 
 Guo,B. and Wu,B. (2018) Principal component based adaptive association test of multiple traits using GWAS summary statistics. bioRxiv 269597; doi: 10.1101/269597
+
+Guo,B. and Wu,B. (2018) Integrate multiple traits to detect novel disease-gene association using GWAS summary data with an adaptive test approach. \emph{Bioinformatics}, under revision.
 }
